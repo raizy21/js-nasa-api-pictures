@@ -4,15 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>template</title>
+    <title>nasa api pictures</title>
 
     <!-- fav icon -->
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="img/favicon.png">
     <!-- css -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+    <!-- loader -->
+    <div class="loader hidden">
+        <img src="rocket.svg" alt="rocket loading animation">
+    </div>
+
+    <!-- container -->
+    <div class="container">
+        <!-- mavigation -->
+        <div class="navigation-container">
+            <span class="background"></span>
+            <!-- results nav -->
+            <span class="navigation-items" id="resultsNav">
+                <h3 class="clickable" onclick="updateDOM('favorites')">favorties</h3>
+                <!-- create space who does't get removed -->
+                <h3>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;</h3>
+                <h3 class="clickable" onclick="getNasaPictures()">load more</h3>
+            </span>
+            <!-- favorites nav -->
+            <span class="navigatio-items hidden" id="favoritesNav">
+                <h3 class="clickable" onclick="getNasaPictures()">load more nasa images</h3>
+            </span>
+
+        </div>
+        <!-- images container -->
+        <div class="images-container"></div>
+    </div>
+
+    <!-- save confirmation -->
+    <div class="save-confirmed" hidden>
+        <h1>added!</h1>
+    </div>
     <!-- script -->
     <script src="script.js"></script>
 </body>
